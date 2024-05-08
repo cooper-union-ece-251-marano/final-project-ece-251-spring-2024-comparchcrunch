@@ -18,21 +18,25 @@
 
 module tb_adder;
     parameter n = 32;
-    logic [(n-1):0] a, b, y;
+    logic bit en, rst, c_out, clock;
+    logic [(n-1):0] a, b, out;
 
    initial begin
-        $dumpfile("adder.vcd");
+        $dumpfile("tb_adder.vcd");
         $dumpvars(0, uut);
-        $monitor("a = 0x%0h b = 0x%0h y = 0x%0h", a, b, y);
+        $monitor("a = 0x%0h b = 0x%0h out = 0x%0h", a, b, out);
     end
 
     initial begin
-        a <= #n'hFFFFFFFF;
-        b <= #n'hFFFFFFFF;
+        a <= #n'h01B30FFF;
+        b <= #n'hFFA5FFFF;
+        en <= 1;
+        rst <= 0;
+
     end
 
     adder uut(
-        .A(a), .B(b), .Y(y)
+        .EN(en) .RST(rst) .CLOCK(clock) .A(a), .B(b), .OUT(out) .C_OUT(c_out)
     );
 endmodule
 `endif // TB_ADDER

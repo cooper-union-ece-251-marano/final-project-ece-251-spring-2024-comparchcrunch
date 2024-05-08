@@ -21,7 +21,7 @@ module tb_clock;
     logic enable;
 
    initial begin
-        $dumpfile("clock.vcd");
+        $dumpfile("tb_clock.vcd");
         $dumpvars(0, uut);
         //$monitor("enable = %b clk = %b", enable, clk);
         $monitor("time=%0t \t enable=%b clk=%b",$realtime, enable, clk);
