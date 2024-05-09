@@ -31,6 +31,7 @@ module computer
     //
     // ---------------- MODULE DESIGN IMPLEMENTATION ----------------
     //
+    //maybe wire not logic
     logic [(n-1):0] pc, instr, readdata;
 
     // computer internal components
