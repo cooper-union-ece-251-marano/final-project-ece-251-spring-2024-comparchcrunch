@@ -18,7 +18,6 @@
 
 module tb_adder;
     parameter n = 32;
-    logic bit en, rst, c_out, clock;
     logic [(n-1):0] a, b, out;
 
    initial begin
@@ -30,13 +29,16 @@ module tb_adder;
     initial begin
         a <= #n'h01B30FFF;
         b <= #n'hFFA5FFFF;
-        en <= 1;
-        rst <= 0;
-
+        #10
+        a <= #n'987654321;
+        b <= #n'123456789;
+        #10
+        a <= #n'h01000001;
+        b <= #n'101010101;
     end
 
     adder uut(
-        .EN(en) .RST(rst) .CLOCK(clock) .A(a), .B(b), .OUT(out) .C_OUT(c_out)
+        .a(a), .b(b), .c(out)
     );
 endmodule
 `endif // TB_ADDER
