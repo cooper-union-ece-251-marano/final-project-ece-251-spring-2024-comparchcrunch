@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // The Cooper Union
 // ECE 251 Spring 2024
-// Engineer: Prof Rob Marano
+// Engineer: Prof Rob Marano, Isaac Moore
 // 
 //     Create Date: 2023-02-07
 //     Module Name: tb_signext
@@ -20,21 +20,26 @@ module tb_sl2;
     parameter n = 32; // #bits for an operand
     parameter i = n/2; // #bits for an immediate
     logic [(i-1):0] a;
-    logic [(n-1):0] y;
+    logic [(n-1):0] out;
 
    initial begin
         $dumpfile("signext.vcd");
         $dumpvars(0, uut);
         //$monitor("a = %b (0x%0h)(%0d) y = %b (0x%0h)(%0d) ", a, a, a, y, y, y);
-        $monitor("time=%0t \t a=%b y=%b",$realtime, a, y);
+        $monitor("time=%0t \t a=%b y=%b", $realtime, a, out);
     end
 
     initial begin
         a <= #i'h8000;
+        #10
+        a <= #i'h1402;
+        #10
+        a <= #i'h24B7;
+        $finish;
     end
 
     signext uut(
-        .A(a), .Y(y)
+        .a(a), .out(out)
     );
 endmodule
 `endif // TB_SIGNEXT

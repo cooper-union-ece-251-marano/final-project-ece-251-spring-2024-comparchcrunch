@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // The Cooper Union
 // ECE 251 Spring 2024
-// Engineer: YOUR NAMES
+// Engineer: Isaac Moore, Morris Madeb
 // 
 //     Create Date: 2023-02-07
 //     Module Name: tb_adder
@@ -35,6 +35,7 @@ module tb_adder;
         #10
         a <= #n'h01000001;
         b <= #n'101010101;
+        $finish;
     end
 
     adder uut(

@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // The Cooper Union
 // ECE 251 Spring 2024
-// Engineer: Prof Rob Marano
+// Engineer: Prof Rob Marano, Isaac Moore
 // 
 //     Create Date: 2023-02-07
 //     Module Name: sl2
@@ -15,18 +15,17 @@
 
 `timescale 1ns/100ps
 
-module sl2
-    #(parameter n = 32)(
+module sl2 #(parameter n = 32)(
     //
     // ---------------- PORT DEFINITIONS ----------------
     //
-    input  logic [(n-1):0] A,
-    output logic [(n-1):0] Y
+    input  logic [(n-1):0] a,
+    output logic [(n-1):0] out
 );
     //
     // ---------------- MODULE DESIGN IMPLEMENTATION ----------------
     //
-    assign Y = {A[(n-3):0], 2'b00};
+    assign out = {a[(n-3):0], 2'b00};
 endmodule
 
 `endif // SL2

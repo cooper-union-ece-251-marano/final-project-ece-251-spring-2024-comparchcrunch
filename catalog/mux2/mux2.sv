@@ -20,14 +20,14 @@ module mux2
     //
     // ---------------- PORT DEFINITIONS ----------------
     //
-    input  logic [(n-1):0] D0, D1,
-    input  logic S,
-    output logic [(n-1):0] Y
+    input  logic [(n-1):0] d0, d1,
+    input  logic sel,
+    output logic [(n-1):0] out
 );
     //
     // ---------------- MODULE DESIGN IMPLEMENTATION ----------------
     //
-    assign Y = S ? D1 : D0;
+    assign out = sel ? d1 : d0;
 endmodule
 
 `endif // MUX2
