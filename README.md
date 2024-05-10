@@ -1,13 +1,14 @@
 # 32 bit MIPS-wannabe Processor
 Isaac Moore and Morris Madeb
-
+This is 
 ![Opcodes and functions](https://github.com/cooper-union-ece-251-marano/final-project-ece-251-spring-2024-comparchcrunch/assets/44485789/4013d522-ea90-46d7-9a6f-358f8ff4446e)
+Defined functions
 
-![instruction layout](https://github.com/cooper-union-ece-251-marano/final-project-ece-251-spring-2024-comparchcrunch/assets/44485789/6d91fd3a-0b64-4fc6-941d-29505cac87e8)
+![instruction format](https://github.com/cooper-union-ece-251-marano/final-project-ece-251-spring-2024-comparchcrunch/assets/44485789/6d91fd3a-0b64-4fc6-941d-29505cac87e8)
+R, I, and J Formating
 
-
-
-
+![e90449dc-7ca4-4dd5-940c-21ea568a4e40](https://github.com/cooper-union-ece-251-marano/final-project-ece-251-spring-2024-comparchcrunch/assets/44485789/c41e345e-fa31-405a-bd34-1f0094a705eb)
+Datapath
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/pelSJLGu)
 # Catalog of Verilog Components to Build and Simulate a MIPS-based RISC.
