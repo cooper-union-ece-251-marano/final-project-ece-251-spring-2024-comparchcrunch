@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // The Cooper Union
 // ECE 251 Spring 2024
-// Engineer: Prof Rob Marano
+// Engineer: Isaac Moore, Morris Madeb
 // 
 //     Create Date: 2023-02-07
 //     Module Name: computer
@@ -31,6 +31,7 @@ module computer
     //
     // ---------------- MODULE DESIGN IMPLEMENTATION ----------------
     //
+    //maybe wire not logic
     logic [(n-1):0] pc, instr, readdata;
 
     // computer internal components

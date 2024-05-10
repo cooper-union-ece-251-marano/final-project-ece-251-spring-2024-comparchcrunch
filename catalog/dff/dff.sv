@@ -20,22 +20,22 @@ module dff
     //
     // ---------------- PORT DEFINITIONS ----------------
     //
-    input  logic CLOCK, RESET,
-    input  logic [(n-1):0] D,
-    output logic [(n-1):0] Q
+    input  logic clk, rst,
+    input  logic [(n-1):0] d,
+    output logic [(n-1):0] q
 );
     //
     // ---------------- MODULE DESIGN IMPLEMENTATION ----------------
     //
-    always @(posedge CLOCK, posedge RESET)
+    always @(posedge clk, posedge rst)
     begin
-        if (RESET)
+        if (rst)
         begin
-            Q <= 0;
+            q <= 0;
         end
         else
         begin
-            Q <= D;
+            q <= d;
         end
     end
 endmodule

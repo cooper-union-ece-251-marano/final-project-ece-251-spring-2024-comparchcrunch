@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // The Cooper Union
 // ECE 251 Spring 2024
-// Engineer: YOUR NAMES
+// Engineer: Isaac Moore, Morris Madeb
 // 
 //     Create Date: 2023-02-07
 //     Module Name: tb_adder
@@ -18,21 +18,28 @@
 
 module tb_adder;
     parameter n = 32;
-    logic [(n-1):0] a, b, y;
+    logic [(n-1):0] a, b, out;
 
    initial begin
-        $dumpfile("adder.vcd");
+        $dumpfile("tb_adder.vcd");
         $dumpvars(0, uut);
-        $monitor("a = 0x%0h b = 0x%0h y = 0x%0h", a, b, y);
+        $monitor("a = 0x%0h b = 0x%0h out = 0x%0h", a, b, out);
     end
 
     initial begin
-        a <= #n'hFFFFFFFF;
-        b <= #n'hFFFFFFFF;
+        a <= #n'h01B30FFF;
+        b <= #n'hFFA5FFFF;
+        #10
+        a <= #n'987654321;
+        b <= #n'123456789;
+        #10
+        a <= #n'h01000001;
+        b <= #n'101010101;
+        $finish;
     end
 
     adder uut(
-        .A(a), .B(b), .Y(y)
+        .a(a), .b(b), .c(out)
     );
 endmodule
 `endif // TB_ADDER

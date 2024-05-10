@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // The Cooper Union
 // ECE 251 Spring 2024
-// Engineer: Prof Rob Marano
+// Engineer: Isaac Moore, Morris Madeb
 // 
 //     Create Date: 2023-02-07
 //     Module Name: maindec
@@ -36,13 +36,17 @@ module maindec
     assign {regwrite, regdst, alusrc, branch, memwrite,
             memtoreg, jump, aluop} = controls;
 
+    //first 6 bits is op, determinining control values
+    //aluop is last two digits
     always @* begin
         case(op)
-            6'b000000: controls <= 9'b110000010; // RTYPE
+            6'b000000: controls <= 9'b100100010; // RTYPE
+            //I type
             6'b100011: controls <= 9'b101001000; // LW
             6'b101011: controls <= 9'b001010000; // SW
             6'b000100: controls <= 9'b000100001; // BEQ
             6'b001000: controls <= 9'b101000000; // ADDI
+            //J type
             6'b000010: controls <= 9'b000000100; // J
             default:   controls <= 9'bxxxxxxxxx; // illegal operation
         endcase

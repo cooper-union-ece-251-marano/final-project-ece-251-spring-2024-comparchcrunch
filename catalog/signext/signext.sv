@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // The Cooper Union
 // ECE 251 Spring 2024
-// Engineer: Prof Rob Marano
+// Engineer: Isaac Moore, Morris Madeb
 // 
 //     Create Date: 2023-02-07
 //     Module Name: signext
@@ -20,13 +20,13 @@ module signext
     //
     // ---------------- PORT DEFINITIONS ----------------
     //
-    input  logic [(i-1):0] A,
-    output logic [(n-1):0] Y
+    input  logic [(i-1):0] a,
+    output logic [(n-1):0] out
 );
     //
     // ---------------- MODULE DESIGN IMPLEMENTATION ----------------
     //
-    assign Y = { {n{A[(i-1)]}}, A}; // sign extend (i-1)th bit i bits to the left.
+    assign out = { {n{a[(i-1)]}}, a}; // sign extend (i-1)th bit i bits to the left.
 endmodule
 
 `endif // SIGNEXT
