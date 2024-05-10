@@ -1,6 +1,8 @@
 # 32 bit MIPS-wannabe Processor
 Isaac Moore and Morris Madeb
-This is 
+
+
+
 ![Opcodes and functions](https://github.com/cooper-union-ece-251-marano/final-project-ece-251-spring-2024-comparchcrunch/assets/44485789/4013d522-ea90-46d7-9a6f-358f8ff4446e)
 Defined functions
 
