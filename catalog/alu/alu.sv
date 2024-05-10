@@ -46,7 +46,7 @@ module alu
             3'b100: result = a - b; //sub
             3'b101: result = HILO[(2*n-1):n]; //mfhi
             3'b110: result = HILO[(n-1):0]; //mflo
-            3'b111: result = (a<b)?1:0;
+            3'b111: result = (a<b)?1:0; //slt
         endcase
     end
 
